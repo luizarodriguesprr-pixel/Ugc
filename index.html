@@ -1,4 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Portfólio Luiza Rodrigues 2026</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
 <style>
@@ -9,11 +13,12 @@
   --rosa:#A93A63; --rosa-claro:#F6E3E8; --pele:#EBD3C4; --linha:#E2D8D4;
   --titulo:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
   --texto:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --card:min(74vw,280px);
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--porcelana);color:var(--tinta);font-family:var(--texto);font-size:1rem;line-height:1.6}
+body{margin:0;background:var(--porcelana);color:var(--tinta);font-family:var(--texto);font-size:1rem;line-height:1.6;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 [hidden]{display:none!important}
 a{color:inherit}
@@ -24,7 +29,6 @@ section{padding-block:56px;scroll-margin-top:64px}
 h1,h2,h3{font-family:var(--titulo);font-weight:700;margin:0;letter-spacing:-.02em;text-wrap:balance}
 h2{font-size:clamp(2rem,8vw,3.4rem);line-height:1;margin-bottom:24px}
 h2::after{content:"";display:block;width:44px;height:1.5px;background:var(--dourado);margin-top:14px}
-.cabeca h2::after{margin-top:12px}
 h3{font-size:1.15rem;line-height:1.2}
 .sobrelinha{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rosa)}
 
@@ -45,23 +49,24 @@ h3{font-size:1.15rem;line-height:1.2}
 .abre .quem{display:flex;align-items:center;gap:16px}
 .abre .quem img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 50%;flex:none;border:2px solid var(--porcelana);outline:1.5px solid var(--dourado)}
 .abre h1{font-size:clamp(2.6rem,12vw,5.5rem);line-height:.9}
-.abre .cargo{margin-top:6px}
 .abre .frase{margin-top:16px;font-size:1.1rem;max-width:38ch;color:var(--tinta-suave)}
 .acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 
 /* Vídeos em trilho */
 .videos{padding-top:24px}
-.cabeca{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:16px}
-.cabeca h2{margin:0}
-.setas{display:flex;gap:8px}
-.setas button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--dourado);background:var(--branco);color:var(--tinta);font-size:1.2rem;cursor:pointer}
-.setas button:hover{background:var(--manteiga);color:var(--tinta)}
-.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
-.filtro{min-height:44px;padding:8px 16px;border-radius:99px;border:1px solid var(--dourado);background:var(--branco);color:var(--tinta);font:500 .92rem var(--texto);cursor:pointer}
+.intro-videos{margin:-6px 0 18px}
+.intro-videos h3{font-size:1.25rem;line-height:1.2}
+.intro-videos p{margin-top:4px;font-size:.92rem;color:var(--tinta-suave);max-width:56ch}
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filtro{flex:none;min-height:44px;padding:8px 16px;border-radius:99px;border:1px solid var(--dourado);background:var(--branco);color:var(--tinta);font:500 .92rem var(--texto);white-space:nowrap;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.filtro:hover{background:var(--manteiga)}
 .filtro[aria-pressed="true"]{background:var(--tinta);color:var(--branco);border-color:var(--tinta)}
-.contagem{font-size:.9rem;color:var(--tinta-suave);margin-bottom:14px}
-.trilho{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;margin-inline:-20px;padding:0 20px 12px;scrollbar-width:thin}
-.vcard{flex:0 0 min(74vw,280px);scroll-snap-align:start;min-width:0}
+.vazio{font-size:.9rem;color:var(--tinta-suave);margin-bottom:14px}
+.carrossel{position:relative}
+.trilho{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;margin-inline:-20px;padding:0 20px 12px;scrollbar-width:none;touch-action:pan-x pan-y}
+.trilho::-webkit-scrollbar{display:none}
+.trilho::after{content:"";flex:0 0 6px}
+.vcard{flex:0 0 var(--card);scroll-snap-align:start;min-width:0}
 .vquadro{position:relative;aspect-ratio:9/16;background:var(--tinta);border-radius:18px;overflow:hidden}
 .vquadro video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--tinta)}
 .vplay{position:absolute;inset:0;width:100%;border:0;padding:0;cursor:pointer;background:transparent;display:grid;place-items:center}
@@ -72,6 +77,13 @@ h3{font-size:1.15rem;line-height:1.2}
 .vmeta{font-size:.88rem;color:var(--tinta-suave);margin-top:2px}
 .shop{display:inline-block;margin-top:8px;background:var(--rosa-claro);color:var(--rosa);border-radius:99px;padding:2px 10px;font-size:.75rem;font-weight:600}
 .reservado .vquadro{background:var(--branco);border:1.5px dashed var(--linha);display:grid;place-items:center;text-align:center;padding:20px;color:var(--tinta-suave);font-size:.92rem}
+/* setas discretas sobre as bordas do trilho, centradas na altura do vídeo */
+.seta{position:absolute;z-index:2;top:calc(var(--card) * 16 / 9 / 2 - 19px);width:38px;height:38px;border-radius:50%;border:1px solid var(--dourado);background:rgba(255,255,255,.88);color:var(--tinta);display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 1px 6px rgba(46,33,29,.12);transition:opacity .25s,background-color .2s}
+.seta svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.seta:hover{background:var(--manteiga)}
+.seta.ant{left:-8px}
+.seta.prox{right:-8px}
+.seta:disabled{opacity:0;pointer-events:none}
 
 /* Sobre */
 .sobre{padding-top:40px}
@@ -118,14 +130,22 @@ ol.lista li::before{counter-increment:p;content:counter(p);font-family:var(--tit
 .equipos li svg{flex:none}
 
 /* Investimento */
+.servicos{display:grid;gap:12px;margin-top:12px}
+.servico{background:var(--branco);border:1px solid var(--dourado);border-radius:18px;padding:20px;display:grid;gap:6px;align-content:start}
+.servico .num{font-family:var(--titulo);font-weight:700;font-size:1.5rem;line-height:1;color:var(--rosa)}
+.servico h3{font-size:1.25rem}
+.servico p{font-size:.94rem;color:var(--tinta-suave)}
+.orcamento{margin-top:20px;background:var(--manteiga);border:1px solid var(--dourado);border-radius:18px;padding:22px 20px;display:grid;gap:14px;align-items:center}
+.orcamento p{max-width:48ch}
+.orcamento .btn{min-height:52px;padding-inline:28px;font-size:1.05rem}
+.subsecao{margin-top:40px}
+.subsecao h3.tit{font-size:1.5rem;line-height:1.1;margin:6px 0 12px}
 .pacotes{display:grid;gap:12px}
 .pacote{background:var(--branco);border:1px solid var(--dourado);border-radius:18px;padding:20px;display:grid;gap:14px}
 .pacote .linha{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pacote .linha+.linha{border-top:1px solid var(--linha);padding-top:10px}
 .preco{font-family:var(--titulo);font-weight:700;font-size:1.7rem;line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
 .pacote .btn{width:100%}
-.condicoes{margin-top:24px;display:grid;gap:10px;max-width:70ch}
-.condicoes p b{font-weight:600}
 .adicionais{margin-top:36px}
 .adicionais h3.tit{font-size:1.5rem;line-height:1.1;margin:6px 0 12px}
 .caixa{background:var(--branco);border:1px solid var(--dourado);border-radius:18px;padding:4px 20px}
@@ -144,7 +164,6 @@ ol.lista li::before{counter-increment:p;content:counter(p);font-family:var(--tit
 .nota-org{margin-top:14px;max-width:70ch}
 .nota-org b{font-weight:600}
 .prazo{grid-column:2;margin-top:10px;background:var(--manteiga-forte);border-left:3px solid var(--rosa);border-radius:10px;padding:10px 12px;font-weight:600;color:var(--tinta)!important}
-.condicoes mark{background:var(--manteiga-forte);color:var(--tinta);font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
 
 /* Contato */
 .contato{background:var(--branco)}
@@ -158,6 +177,16 @@ ol.lista li::before{counter-increment:p;content:counter(p);font-family:var(--tit
 .copiar{min-height:36px;padding:4px 12px;border-radius:99px;border:1px solid var(--linha);background:var(--porcelana);color:var(--tinta);font:500 .82rem var(--texto);cursor:pointer}
 footer{background:var(--branco);border-top:1px solid var(--dourado);text-align:center;font-size:.85rem;color:var(--tinta-suave);padding:20px}
 
+/* celular: filtros em uma linha que desliza para o lado */
+@media (max-width:719px){
+  .filtros{flex-wrap:nowrap;overflow-x:auto;margin-inline:-20px;padding:2px 20px 4px;scroll-padding-inline:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .filtros::-webkit-scrollbar{display:none}
+  .filtros::after{content:"";flex:0 0 6px}
+  .seta{width:34px;height:34px;top:calc(var(--card) * 16 / 9 / 2 - 17px)}
+  .seta.ant{left:-12px}
+  .seta.prox{right:-12px}
+  .orcamento .btn{width:100%}
+}
 @media (min-width:720px){
   section{padding-block:80px}
   .abre{padding-block:48px 8px}
@@ -166,13 +195,17 @@ footer{background:var(--branco);border-top:1px solid var(--dourado);text-align:c
   .duas{grid-template-columns:1fr 1fr;gap:56px}
   .infos{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
   .info{padding:28px}
+  .servicos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .orcamento{grid-template-columns:1fr auto;padding:26px 28px}
   .pacotes{grid-template-columns:repeat(2,minmax(0,1fr))}
   .canais{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
-@media (min-width:1000px){.pacotes{grid-template-columns:repeat(4,minmax(0,1fr))}.pacote{align-content:space-between}.pacote .linha{flex-direction:column;gap:4px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (min-width:1000px){.servicos{grid-template-columns:repeat(4,minmax(0,1fr))}.pacotes{grid-template-columns:repeat(4,minmax(0,1fr))}.pacote{align-content:space-between}.pacote .linha{flex-direction:column;gap:4px}}
+@media (prefers-reduced-motion:reduce){html,.trilho{scroll-behavior:auto}}
 </style>
 
+</head>
+<body>
 <header class="topo">
   <div class="wrap">
     <a class="marca" href="#inicio">Luiza Rodrigues</a>
@@ -215,13 +248,18 @@ footer{background:var(--branco);border-top:1px solid var(--dourado);text-align:c
 <!-- VÍDEOS -->
 <section class="videos" id="videos">
   <div class="wrap">
-    <div class="cabeca">
-      <h2>Vídeos</h2>
-      <div class="setas"><button type="button" id="seta-ant" aria-label="Vídeos anteriores">←</button><button type="button" id="seta-prox" aria-label="Próximos vídeos">→</button></div>
+    <h2>Vídeos</h2>
+    <div class="intro-videos">
+      <h3>Explore meus criativos</h3>
+      <p>Conteúdos que combinam criatividade, autenticidade e estratégia. Selecione um nicho ou deslize para explorar.</p>
     </div>
     <div class="filtros" id="filtros" role="group" aria-label="Filtrar vídeos por categoria"></div>
-    <p class="contagem" id="contagem" aria-live="polite"></p>
-    <div class="trilho" id="lista-videos" tabindex="0" aria-label="Lista de vídeos, deslize para o lado"></div>
+    <p class="vazio" id="vazio" aria-live="polite" hidden></p>
+    <div class="carrossel">
+      <button type="button" class="seta ant" id="seta-ant" aria-label="Vídeos anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="trilho" id="lista-videos" tabindex="0" aria-label="Lista de vídeos, deslize para o lado"></div>
+      <button type="button" class="seta prox" id="seta-prox" aria-label="Próximos vídeos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
   </div>
 </section>
 
@@ -263,7 +301,7 @@ footer{background:var(--branco);border-top:1px solid var(--dourado);text-align:c
           <li><h3>Briefing e alinhamento</h3><p>Entendo a marca, o produto, o público e o objetivo.</p></li>
           <li><h3>Pesquisa e estratégia</h3><p>Análise de referências e abordagem.</p></li>
           <li><h3>Roteiro e produção</h3><p>Planejo e gravo as cenas com o meu equipamento.</p></li>
-          <li><h3>Edição e entrega</h3><p>Edito, apresento para aprovação e entrego os arquivos finais.</p><p class="prazo">Em até 5 dias úteis, tudo no Google Drive, pronto para postar ou anunciar.</p></li>
+          <li><h3>Edição e entrega</h3><p>Edito, apresento para aprovação e entrego os arquivos finais.</p><p class="prazo" id="prazo-entrega"></p></li>
         </ol>
       </div>
     </div>
@@ -291,7 +329,17 @@ footer{background:var(--branco);border-top:1px solid var(--dourado);text-align:c
 <section id="investimento">
   <div class="wrap">
     <h2>Investimento</h2>
-    <div class="pacotes" id="lista-pacotes"></div>
+    <p class="sobrelinha">Serviços principais</p>
+    <div class="servicos" id="lista-servicos"></div>
+    <div class="orcamento">
+      <p>Me conta o produto, o objetivo e onde o conteúdo vai rodar. Eu monto a proposta certa para a sua marca.</p>
+      <a class="btn cheio" id="btn-orcamento" target="_blank" rel="noopener">Solicitar orçamento</a>
+    </div>
+    <div class="subsecao">
+      <p class="sobrelinha">Valores</p>
+      <h3 class="tit">Avulsos e pacotes</h3>
+      <div class="pacotes" id="lista-pacotes"></div>
+    </div>
     <div class="adicionais">
       <p class="sobrelinha">Extras</p>
       <h3 class="tit">Para somar ao seu pacote</h3>
@@ -310,7 +358,7 @@ footer{background:var(--branco);border-top:1px solid var(--dourado);text-align:c
         <div class="item"><div><p class="nome">Impulsionamento pelo meu perfil</p><p class="desc">Autorização de parceria paga por 1 mês, para a marca rodar anúncios usando o meu perfil. Serviço separado da collab.</p></div><div class="valor"><span class="preco">+ R$ 150,00</span><small>1 mês</small></div></div>
         <div class="item"><div><p class="nome">Entrega expressa</p><p class="desc">Conteúdo entregue em até 48 horas.</p></div><div class="valor"><span class="preco">+ R$ 150,00</span><small>adicional</small></div></div>
       </div>
-      <p class="nota-org"><b>Uso orgânico:</b> nos avulsos e nos pacotes, a marca pode usar os conteúdos de forma orgânica por prazo vitalício.</p>
+      <p class="nota-org" id="uso-organico"></p>
     </div>
   </div>
 </section>
@@ -348,35 +396,48 @@ const CONTATO = {
 const CATEGORIAS = {
   haircare:  "Haircare",
   skincare:  "Skincare",
-  lifestyle: "Lifestyle e bem-estar",
-  casa:      "Home e Decor",
-  tech:      "Tecnologia para criação de conteúdo"
+  lifestyle: "Lifestyle & Bem-estar",
+  casa:      "Casa & Decoração",
+  tech:      "Tecnologia & Acessórios"
 };
 
-/* tiktokShop: true mostra a etiqueta "Conteúdo para TikTok Shop".
+/* A ORDEM DA LISTA É A ORDEM NO SITE. Os 4 primeiros mostram habilidades diferentes:
+   1º gancho forte e apresentação envolvente  -> Coala (Demonstração na rotina)
+   2º demonstração de produto ou ASMR          -> Kérastase (Demonstração e ASMR)
+   3º storytelling / experiência pessoal       -> Ybera (Review e depoimento)
+   4º review com apresentação para a câmera    -> CeraVe (Review)
+   tiktokShop: true mostra a etiqueta "Conteúdo para TikTok Shop".
    reservado: true cria um espaço vazio identificado, sem vídeo. */
 const VIDEOS = [
-  { titulo: "Linha Genesis, Kérastase", categoria: "haircare",  formato: "Demonstração e ASMR", arquivo: "media/kerastase-genesis.mp4",  capa: "media/kerastase-genesis.jpg" },
-  { titulo: "Hidratante CeraVe",        categoria: "skincare",  formato: "Review",              arquivo: "media/cerave-hidratante.mp4",  capa: "media/cerave-hidratante.jpg" },
-  { titulo: "Kit Cronograma, Ybera Paris", categoria: "haircare", formato: "Review e depoimento", arquivo: "media/ybera-cronograma.mp4",   capa: "media/ybera-cronograma.jpg", tiktokShop: true },
-  { titulo: "Hidratante Eucerin",       categoria: "skincare",  formato: "Review e depoimento", arquivo: "media/eucerin-aquaphor.mp4",   capa: "media/eucerin-aquaphor.jpg" },
-  { titulo: "Lente macro Ulanzi",       categoria: "tech",      formato: "Unboxing",            arquivo: "media/ulanzi-lente-macro.mp4", capa: "media/ulanzi-lente-macro.jpg", tiktokShop: true },
-  { titulo: "Microfone Hollyland Lark M2", categoria: "tech",   formato: "Unboxing",            arquivo: "media/hollyland-lark-m2.mp4",  capa: "media/hollyland-lark-m2.jpg" },
   { titulo: "Kit Chá Branco, Coala",   categoria: "casa",      formato: "Demonstração na rotina", arquivo: "media/coala-kit-cha-branco.mp4", capa: "media/coala-kit-cha-branco.jpg", tiktokShop: true },
+  { titulo: "Linha Genesis, Kérastase", categoria: "haircare",  formato: "Demonstração e ASMR", arquivo: "media/kerastase-genesis.mp4",  capa: "media/kerastase-genesis.jpg" },
+  { titulo: "Kit Cronograma, Ybera Paris", categoria: "haircare", formato: "Review e depoimento", arquivo: "media/ybera-cronograma.mp4",   capa: "media/ybera-cronograma.jpg", tiktokShop: true },
+  { titulo: "Creme Hidratante Corporal, CeraVe",        categoria: "skincare",  formato: "Review",              arquivo: "media/cerave-hidratante.mp4",  capa: "media/cerave-hidratante.jpg" },
   { titulo: "Carregador Portátil, Basike", categoria: "tech",  formato: "Review e demonstração", arquivo: "media/basike-carregador.mp4", capa: "media/basike-carregador.jpg", tiktokShop: true },
+  { titulo: "Pomada Reparadora, Eucerin",       categoria: "skincare",  formato: "Review e depoimento", arquivo: "media/eucerin-aquaphor.mp4",   capa: "media/eucerin-aquaphor.jpg" },
+  { titulo: "Lente Macro CL-003, Ulanzi",       categoria: "tech",      formato: "Unboxing",            arquivo: "media/ulanzi-lente-macro.mp4", capa: "media/ulanzi-lente-macro.jpg", tiktokShop: true },
+  { titulo: "Microfone Hollyland Lark M2", categoria: "tech",   formato: "Unboxing",            arquivo: "media/hollyland-lark-m2.mp4",  capa: "media/hollyland-lark-m2.jpg" },
   { titulo: "SuperCoffee",              categoria: "lifestyle", reservado: true, aviso: "Espaço reservado. Vídeo em finalização." }
 ];
 
 const FOTOS = [
   { arquivo: "media/foto-episol-glow.webp", legenda: "Episol Glow FPS 60, Mantecorp Skincare" },
   { arquivo: "media/foto-centella.webp",    legenda: "Madagascar Centella Ampoule, SKIN1004" },
-  { arquivo: "media/foto-cerave.webp",      legenda: "Creme Hidratante CeraVe" },
+  { arquivo: "media/foto-cerave.webp",      legenda: "Creme Hidratante Corporal, CeraVe" },
   { arquivo: "media/foto-ybera.webp",       legenda: "Cronograma Capilar, Ybera" },
   { arquivo: "media/foto-fashion-gold.webp", legenda: "Shampoo e Máscara Pós-Progressiva, Fashion Gold" },
   { arquivo: "media/foto-maybelline.webp",  legenda: "Máscara de cílios Sky High, Maybelline" },
   { arquivo: "media/foto-celimax.webp",     legenda: "Retinal Shot, Celimax" },
   { arquivo: "media/foto-cafe.webp",        legenda: "Café e caderno" },
-  { arquivo: "media/foto-eucerin.webp",     legenda: "Aquaphor, Eucerin" }
+  { arquivo: "media/foto-eucerin.webp",     legenda: "Pomada Reparadora, Eucerin" }
+];
+
+/* Serviços principais (sem preço: os valores ficam nos pacotes abaixo). */
+const SERVICOS = [
+  { nome: "Vídeos UGC avulsos",       desc: "Um vídeo por vez, para testar um formato ou complementar uma campanha." },
+  { nome: "Pacotes de vídeos UGC",    desc: "Vídeos e fotos combinados em um só pedido, para manter o conteúdo da marca constante." },
+  { nome: "Conteúdos para anúncios pagos", desc: "Vídeos pensados para tráfego pago. A autorização de uso em anúncios é contratada à parte." },
+  { nome: "Produção personalizada",   desc: "Roteiro e gravação sob medida, conforme o briefing da marca." }
 ];
 
 /* "mensagem" é o texto que já vai escrito no WhatsApp ao tocar em "Quero esse". */
@@ -386,6 +447,14 @@ const PACOTES = [
   { nome: "Pacote Basic",   linhas: [["2 vídeos e 3 fotos", "R$ 690,00"]],  mensagem: "Oi Luiza, vi seu portfólio e tenho interesse no Pacote Basic." },
   { nome: "Pacote Premium", linhas: [["3 vídeos e 5 fotos", "R$ 1.035,00"]], mensagem: "Oi Luiza, vi seu portfólio e tenho interesse no Pacote Premium." }
 ];
+const MENSAGEM_ORCAMENTO = "Oi Luiza, vi seu portfólio e quero solicitar um orçamento.";
+
+/* CONDIÇÕES COMERCIAIS: atualize aqui quando a tabela for aprovada.
+   O prazo vitalício de uso orgânico foi retirado até ser confirmado. */
+const CONDICOES = {
+  prazoEntrega: "Em até 5 dias úteis, tudo no Google Drive, pronto para postar ou anunciar.",
+  usoOrganico:  "nos avulsos e nos pacotes, a marca pode usar os conteúdos de forma orgânica. O período de uso é combinado no orçamento de cada projeto."
+};
 /* ============================ fim da parte editável ============================ */
 
 document.documentElement.lang = "pt-BR";
@@ -417,9 +486,23 @@ if ("IntersectionObserver" in window) {
   const obs = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting && !document.fullscreenElement) e.target.pause(); }), { threshold: 0.2 });
   todosVideos.forEach((v) => obs.observe(v));
 }
+
+/* Setas: andam um vídeo por vez e somem quando não há mais para onde ir */
+const setaAnt = $("#seta-ant"), setaProx = $("#seta-prox");
 const passo = () => (lista.querySelector(".vcard:not([hidden])")?.offsetWidth || 280) + 14;
-$("#seta-ant").addEventListener("click", () => lista.scrollBy({ left: -passo(), behavior: "smooth" }));
-$("#seta-prox").addEventListener("click", () => lista.scrollBy({ left: passo(), behavior: "smooth" }));
+function atualizaSetas() {
+  const fim = lista.scrollWidth - lista.clientWidth;
+  setaAnt.disabled = lista.scrollLeft <= 4;
+  setaProx.disabled = lista.scrollLeft >= fim - 4;
+}
+setaAnt.addEventListener("click", () => lista.scrollBy({ left: -passo(), behavior: "smooth" }));
+setaProx.addEventListener("click", () => lista.scrollBy({ left: passo(), behavior: "smooth" }));
+lista.addEventListener("scroll", atualizaSetas, { passive: true });
+addEventListener("resize", atualizaSetas);
+lista.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") { e.preventDefault(); setaProx.click(); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); setaAnt.click(); }
+});
 
 const filtros = $("#filtros");
 filtros.innerHTML = [["todos", "Todos"], ...Object.keys(CATEGORIAS).map((c) => [c, CATEGORIAS[c]])]
@@ -433,11 +516,17 @@ function filtrar(cat) {
     if (!mostra && v) v.pause();
     if (mostra && v) n++;
   });
-  lista.scrollLeft = 0;
+  lista.style.scrollBehavior = "auto"; lista.scrollLeft = 0; lista.style.scrollBehavior = "";
   filtros.querySelectorAll(".filtro").forEach((b) => b.setAttribute("aria-pressed", b.dataset.cat === cat));
-  $("#contagem").textContent = n === 0 ? "Vídeos desta categoria em finalização." : (n === 1 ? "1 vídeo" : n + " vídeos") + ". Deslize para o lado para ver todos.";
+  $("#vazio").hidden = n > 0;
+  $("#vazio").textContent = n === 0 ? "Vídeos desta categoria em finalização." : "";
+  atualizaSetas();
 }
-filtros.addEventListener("click", (e) => { const b = e.target.closest(".filtro"); if (b) filtrar(b.dataset.cat); });
+filtros.addEventListener("click", (e) => {
+  const b = e.target.closest(".filtro"); if (!b) return;
+  filtrar(b.dataset.cat);
+  b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+});
 filtrar("todos");
 
 /* Fotos e ampliação */
@@ -459,7 +548,11 @@ dlg.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") mostrar(atua
 dlg.addEventListener("close", () => { if (origem) origem.focus(); });
 
 /* Investimento */
+$("#lista-servicos").innerHTML = SERVICOS.map((s, i) => `<div class="servico"><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${esc(s.nome)}</h3><p>${esc(s.desc)}</p></div>`).join("");
+$("#btn-orcamento").href = zap(MENSAGEM_ORCAMENTO);
 $("#lista-pacotes").innerHTML = PACOTES.map((p) => `<div class="pacote"><div><h3>${esc(p.nome)}</h3></div><div>${p.linhas.map(([d, v]) => `<div class="linha"><span>${esc(d)}</span><span class="preco">${esc(v)}</span></div>`).join("")}</div><a class="btn cheio" ${ext} href="${esc(zap(p.mensagem))}" aria-label="Quero esse: ${esc(p.nome)}, abre o WhatsApp">Quero esse</a></div>`).join("");
+$("#prazo-entrega").textContent = CONDICOES.prazoEntrega;
+$("#uso-organico").innerHTML = "<b>Uso orgânico:</b> " + esc(CONDICOES.usoOrganico);
 
 /* Contato */
 $("#canais").innerHTML =
@@ -479,5 +572,5 @@ $("#dados").addEventListener("click", (e) => {
 });
 </script>
 
-
-</body></html>
+</body>
+</html>
